@@ -15,35 +15,33 @@ export default function BotonMenu() {
         <img
           src="/icons/menu.png"
           alt="Icono de menú"
-          width={32}
-          height={32}
+          width={40}
+          height={40}
         />
       </button>
 
       {/* Menú lateral */}
       <aside className={`fixed top-0 left-0 h-full w-full 
-  backdrop-blur-sm bg-black/40 text-white shadow-lg 
-  transform transition-transform duration-300 ease-in-out 
-  ${abierto ? 'translate-x-0' : '-translate-x-full'}`}
->
-
-        <div className="relative h-full flex flex-col px-4 pt-16 pb-4 overflow-y-auto">
+        backdrop-blur-sm bg-black/40 text-white shadow-lg 
+        transform transition-transform duration-300 ease-in-out 
+        ${abierto ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        <div className="relative h-full flex flex-col px-6 pt-20 pb-6 overflow-y-auto">
           {/* Botón cerrar */}
           <button
             onClick={() => setAbierto(false)}
-            className="absolute top-4 right-4 text-2xl z-50"
+            className="absolute top-5 right-5 text-3xl z-50"
             aria-label="Cerrar menú"
           >
             ✕
           </button>
 
-          {/* Contenido en 2 columnas para <1080px */}
-          <div className="flex flex-col gap-6 max-[1079px]:block hidden">
-            <div className="flex flex-row justify-between items-start gap-6">
+          {/* Contenido en 2 columnas para <1138px */}
+          <div className="flex flex-col gap-8 max-[1138px]:block hidden">
+            <div className="flex flex-row justify-between items-start gap-8">
               {/* Menús */}
-              <nav className="flex flex-col gap-3 text-left font-medium text-sm w-1/2">
+              <nav className="flex flex-col gap-2.5 sm:gap-3 md:gap-4 text-left font-semibold text-base sm:text-lg md:text-3xl w-1/2">
                 {[
-                  { to: '/inicio', label: 'Inicio' },
                   { to: '/carta', label: 'Carta' },
                   { to: '/nuestro-concepto', label: 'Nuestro concepto' },
                   { to: '/nuestra-historia', label: 'Historia' },
@@ -61,8 +59,8 @@ export default function BotonMenu() {
               </nav>
 
               {/* Redes sociales y dirección */}
-              <div className="flex flex-col gap-3 w-1/2 text-xs sm:text-sm leading-snug font-light">
-                <div className="flex gap-3">
+              <div className="flex flex-col gap-4 w-1/2 text-sm sm:text-base md:text-lg leading-snug font-light">
+                <div className="flex gap-4">
                   <a
                     href="https://www.facebook.com/tu-restaurante"
                     target="_blank"
@@ -70,7 +68,7 @@ export default function BotonMenu() {
                     aria-label="Facebook"
                     className="hover:scale-110 transition-transform"
                   >
-                    <img src="/icons/facebook.png" alt="Facebook" className="w-6 h-6 sm:w-7 sm:h-7" />
+                    <img src="/icons/facebook.png" alt="Facebook" className="w-7 h-7 sm:w-8 sm:h-8" />
                   </a>
                   <a
                     href="https://www.instagram.com/tu-restaurante"
@@ -79,7 +77,7 @@ export default function BotonMenu() {
                     aria-label="Instagram"
                     className="hover:scale-110 transition-transform"
                   >
-                    <img src="/icons/insta.png" alt="Instagram" className="w-6 h-6 sm:w-7 sm:h-7" />
+                    <img src="/icons/insta.png" alt="Instagram" className="w-7 h-7 sm:w-8 sm:h-8" />
                   </a>
                 </div>
 
@@ -91,12 +89,11 @@ export default function BotonMenu() {
             </div>
           </div>
 
-          {/* Contenido en una columna desde 1080px */}
-          <div className="hidden min-[1080px]:flex flex-col gap-5 text-left font-medium text-sm sm:text-base mt-4">
+          {/* Contenido en una columna desde 1138px */}
+          <div className="hidden min-[1138px]:flex flex-col gap-6 text-left font-semibold text-lg md:text-xl mt-6">
             {/* Menús */}
-            <nav className="flex flex-col gap-3">
+            <nav className="flex flex-col gap-4">
               {[
-                { to: '/inicio', label: 'Inicio' },
                 { to: '/carta', label: 'Carta' },
                 { to: '/nuestro-concepto', label: 'Nuestro concepto' },
                 { to: '/nuestra-historia', label: 'Historia' },
@@ -114,7 +111,7 @@ export default function BotonMenu() {
             </nav>
 
             {/* Redes sociales */}
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-5 mt-6">
               <a
                 href="https://www.facebook.com/tu-restaurante"
                 target="_blank"
@@ -122,7 +119,7 @@ export default function BotonMenu() {
                 aria-label="Facebook"
                 className="hover:scale-110 transition-transform"
               >
-                <img src="/icons/facebook.png" alt="Facebook" className="w-7 h-7" />
+                <img src="/icons/facebook.png" alt="Facebook" className="w-8 h-8" />
               </a>
               <a
                 href="https://www.instagram.com/tu-restaurante"
@@ -131,12 +128,12 @@ export default function BotonMenu() {
                 aria-label="Instagram"
                 className="hover:scale-110 transition-transform"
               >
-                <img src="/icons/insta.png" alt="Instagram" className="w-7 h-7" />
+                <img src="/icons/insta.png" alt="Instagram" className="w-8 h-8" />
               </a>
             </div>
 
             {/* Dirección */}
-            <div className="mt-4 text-xs sm:text-sm leading-snug font-light">
+            <div className="mt-4 text-base md:text-lg leading-snug font-light">
               Carrer Camí de Riudoms, 34<br />
               43202 Reus, Tarragona
             </div>
