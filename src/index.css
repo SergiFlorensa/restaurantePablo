@@ -10,6 +10,16 @@ body {
   background-size: cover; /* Asegura que cubra toda la pantalla */
   background-repeat: no-repeat;
   background-position: center;
+  font-family: "Anziano SC", serif;
+  font-feature-settings: "smcp";
+}
+@font-face {
+  font-family: "Anziano SC";
+  src: url("/fonts/anziano.woff2") format("woff2"),
+       url("/fonts/anziano.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 .cabecera-responsive {
