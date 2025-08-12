@@ -21,10 +21,31 @@ export default function GaleriaReferencias() {
 
       {/* Separador decorativo y texto */}
       <div className="mt-10 text-center">
-        <div className="w-0.5 h-10 bg-black mx-auto" />
-        <h2 className="text-4xl tracking-wide uppercase text-gray-500 pt-5">Revisa</h2>
+        <div
+          className="w-0.5 h-10 mx-auto"
+          style={{ backgroundColor: '#265b4d' }}
+        />
+
         <div className="h-1 w-px mx-auto bg-red-800 mb-3" />
-        <h3 className="text-3xl sm:text-3xl font-semibold text-gray-800">Nuestra carta</h3>
+
+        <h3
+          className="text-3xl sm:text-3xl font-semibold"
+          style={{ color: '#265b4d' }}
+        >
+          La carta
+        </h3>
+
+         {/* Frase destacada debajo del título */}
+        <p
+          className="text-center text-[#265b4d]"
+          style={{
+            fontFamily: 'RockSalt',
+            fontSize: 'clamp(1.25rem, 8vw, 2.5rem)',
+            lineHeight: '2.8rem',
+          }}
+        >
+          Elige tu momento favorito del sabor
+        </p>
       </div>
     </section>
   )

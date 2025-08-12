@@ -6,17 +6,31 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-image: url('/images/turquesa.png');
-  background-size: cover; /* Asegura que cubra toda la pantalla */
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #d8c5ad;   /* Fondo uniforme en todo el body */
+  /* Eliminamos las propiedades de imagen de fondo */
+  /* background-image: url('/images/8.jpg'); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
   font-family: "Anziano SC", serif;
   font-feature-settings: "smcp";
 }
+
+
 @font-face {
   font-family: "Anziano SC";
   src: url("/fonts/anziano.woff2") format("woff2"),
        url("/fonts/anziano.woff") format("woff");
+       
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RockSalt";
+  src: url("/fonts/rocksalt.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -35,10 +49,10 @@ body {
 /* Desktop */
 @media (min-width: 1024px) {
   .cabecera-responsive {
-    --pt: 40%;          /* menos altura en desktop */
+    --pt: 20%;          /* menos altura en desktop */
   }
   .cabecera-responsive img {
-    object-fit: cover;  /* desktop: llena todo el ancho */
+    object-fit: contain;  /* desktop: llena todo el ancho */
   }
 }
 @keyframes fade-in {
@@ -49,15 +63,12 @@ body {
   animation: fade-in 0.25s ease-out forwards;
 }
 /* --- Corte diagonal --- */
-.corte-diagonal {
-  /* triángulo inferior: ajusta el % para cambiar la inclinación */
-  clip-path: polygon(0 0, 100% 0, 100% 52%, 0 100%);
+.corte-ovalado {
+  clip-path: ellipse(80% 110% at 50% -25%);
 }
 
-/* Opcional: cambia la inclinación en pantallas grandes */
 @media (min-width: 1024px) {
-  .corte-diagonal {
-    clip-path: polygon(0 0, 100% 0, 100% 52%, 0 100%);
+  .corte-ovalado {
+    clip-path: ellipse(70% 100% at 50% -55%);
   }
 }
-
