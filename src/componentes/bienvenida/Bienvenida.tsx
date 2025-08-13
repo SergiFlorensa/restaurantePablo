@@ -1,9 +1,11 @@
 export default function Bienvenida() {
+  const backgroundImage = `${import.meta.env.BASE_URL}images/patagonia.jpg`
+
   return (
     <section
       className="relative overflow-hidden"
       style={{
-        backgroundImage: "url('/images/patagonia.jpg')",
+        backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -40,17 +42,13 @@ export default function Bienvenida() {
 
       {/* Contenido */}
       <div className="relative max-w-6xl mx-auto px-6 py-20 z-10">
-        {/* Grid responsivo */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-          {/* Columna izquierda: título + frase */}
+          {/* Columna izquierda */}
           <div className="flex flex-col items-center lg:items-start">
-            {/* Separador */}
-            <div className="relative mb-12">
-              
-            </div>
+            <div className="relative mb-12"></div>
 
             <h2
-              className="text-4xl tracking-widest uppercase font-semibold mb-6 text-center lg:text-left"
+              className="text-2xl tracking-widest uppercase font-semibold mb-6 text-center lg:text-left"
               style={{
                 color: '#265b4d',
                 textShadow: '0 1px 2px rgba(0,0,0,0.1)',
@@ -64,7 +62,7 @@ export default function Bienvenida() {
               style={{
                 color: '#265b4d',
                 fontFamily: 'RockSalt',
-                fontSize: 'clamp(1.4rem, 4vw, 2.8rem)',
+                fontSize: 'clamp(1.4rem, 9vw, 2.8rem)',
                 lineHeight: '1.2',
                 textShadow: '0 1px 2px rgba(0,0,0,0.08)',
               }}
@@ -73,33 +71,27 @@ export default function Bienvenida() {
             </p>
           </div>
 
-          {/* Columna derecha: texto en tarjeta translúcida */}
+          {/* Columna derecha */}
           <div
-            className="
-              rounded-xl border
-              backdrop-blur-sm
-              p-6 sm:p-8
-              text-center lg:text-left
-              "
+            className="rounded-xl border backdrop-blur-sm p-6 sm:p-8 text-center lg:text-left"
             style={{
-              backgroundColor: 'rgba(245, 245, 220, 0.55)', // beige translúcido
-              borderColor: 'rgba(201, 151, 69, 0.45)',      // dorado suave
+              backgroundColor: 'rgba(245, 245, 220, 0.55)',
+              borderColor: 'rgba(201, 151, 69, 0.45)',
               color: '#265b4d',
             }}
           >
             <p className="text-lg sm:text-xl leading-relaxed font-light mb-6">
-              Restaurante Victoria representa la tradición y la esencia de la parrilla
-              argentina, rindiendo un orgulloso tributo a la cultura culinaria del Río de
-              la Plata.
+              Fuego, humo y tradición: trabajamos cortes elegidos para revelar texturas y
+  recuerdos. Plato a plato, contamos la historia de la parrilla argentina.
             </p>
             <p className="text-lg sm:text-xl leading-relaxed font-light">
-              Disfruta de sabores y una vivencia excepcional, desde que llegas hasta que te
-              vas. Nuestro restaurante está pensado para que cada comensal viva una
-              experiencia única, cálida y deliciosa.
+              Queremos que te sientas en casa: servicio cercano, tiempos bien medidos
+              y una carta que evoluciona con el mercado. Ven sin prisa; del resto
+              nos ocupamos nosotros.
             </p>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,5 +1,10 @@
 
 import { motion } from 'framer-motion';
+import cocina from '../../assets/cocina.jpg';
+import burrata from '../../assets/burrata.png';
+import milanesa from '../../assets/milanesa.jpg';
+import carne from '../../assets/carne.jpg';
+
 
 export default function NuestraCocina() {
   return (
@@ -61,22 +66,22 @@ className="md:w-1/2 text-[#265b4d] font-light space-y-6 text-base md:text-lg lg:
             className="md:w-1/2 grid grid-cols-2 gap-4"
           >
             <img
-              src="/images/cocina.jpg"
+              src={cocina}
               alt="Plato típico argentino"
               className="rounded-xl shadow-md object-cover aspect-square hover:scale-105 transition-transform"
             />
             <img
-              src="/images/burrata.png"
+              src={burrata}
               alt="Parrilla argentina"
               className="rounded-xl shadow-md object-cover aspect-square hover:scale-105 transition-transform"
             />
             <img
-              src="/images/milanesa.jpg"
+              src={milanesa}
               alt="Empanadas argentinas"
               className="rounded-xl shadow-md object-cover aspect-square hover:scale-105 transition-transform"
             />
             <img
-              src="/images/carne.jpg"
+              src={carne}
               alt="Postre tradicional argentino"
               className="rounded-xl shadow-md object-cover aspect-square hover:scale-105 transition-transform"
             />

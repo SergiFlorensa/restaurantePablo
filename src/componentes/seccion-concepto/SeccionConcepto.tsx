@@ -12,11 +12,11 @@ export default function SeccionConcepto() {
           En nuestro restaurante vivirás{' '}
           <ReactTyped
             strings={[
-              'la esencia argentina.',
-              'una experiencia con sabor a hogar.',
-              'el calor de una buena mesa.',
-              'el alma de Buenos Aires.',
-              'cocina con historia y corazón.',
+              'sabor auténtico de parrilla.',
+              'cortes seleccionados y fuego paciente.',
+              'momentos para compartir y recordar.',
+              'recetas que cuentan historias.',
+              'vino, charla y buena compañía.',
             ]}
             typeSpeed={60}
             backSpeed={30}
@@ -25,18 +25,16 @@ export default function SeccionConcepto() {
           />
         </h2>
 
- <Link
-  to="/nuestro-concepto"
-  className="inline-block mt-6 px-8 py-3 rounded-full text-sm font-semibold transition"
-  style={{
-    backgroundColor: '#265b4d', // marrón suave
-    color: '#f4f7f6' // beige
-  }}
->
-  CONOCE NUESTRO CONCEPTO
-</Link>
-
-
+        <Link
+          to="/nuestro-concepto"
+          className="inline-block mt-6 px-8 py-3 rounded-full text-sm font-semibold transition"
+          style={{
+            backgroundColor: '#265b4d',
+            color: '#f4f7f6',
+          }}
+        >
+          CONOCE NUESTRO CONCEPTO
+        </Link>
       </div>
     </section>
   )

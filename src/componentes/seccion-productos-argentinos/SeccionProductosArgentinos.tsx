@@ -1,9 +1,11 @@
 export default function SeccionProductosArgentinos() {
+  const bg = `${import.meta.env.BASE_URL}images/boca.jpg`
+
   return (
     <section
-      className="relative text-white px-6 overflow-hidden min-h-[700px]" // altura mínima aumentada
+      className="relative text-white px-6 overflow-hidden min-h-[700px]"
       style={{
-        backgroundImage: "url('/images/boca.jpg')",
+        backgroundImage: `url('${bg}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -11,7 +13,7 @@ export default function SeccionProductosArgentinos() {
       {/* Capa blanca semitransparente */}
       <div className="absolute inset-0 bg-white opacity-40"></div>
 
-      {/* Difuminado beige en bordes laterales */}
+      {/* Difuminados beige */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -20,7 +22,6 @@ export default function SeccionProductosArgentinos() {
         }}
       ></div>
 
-      {/* Difuminado beige en parte superior */}
       <div
         className="absolute top-0 left-0 w-full h-32 pointer-events-none"
         style={{
@@ -29,7 +30,6 @@ export default function SeccionProductosArgentinos() {
         }}
       ></div>
 
-      {/* Difuminado beige en parte inferior */}
       <div
         className="absolute bottom-0 left-0 w-full h-32 pointer-events-none"
         style={{

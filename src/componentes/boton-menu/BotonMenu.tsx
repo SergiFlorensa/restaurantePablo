@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 
+const iconInstagram = `${import.meta.env.BASE_URL}icons/insta.png`
+const iconMenu = `${import.meta.env.BASE_URL}icons/bme.png`
+
 export default function BotonMenu() {
   const [abierto, setAbierto] = useState(false)
   const [portalNode, setPortalNode] = useState<HTMLElement | null>(null)
@@ -90,7 +93,7 @@ export default function BotonMenu() {
               aria-label="Instagram"
               className="hover:scale-110 transition-transform"
             >
-              <img src="/icons/insta.png" alt="Instagram" className="w-8 h-8" />
+              <img src={iconInstagram} alt="Instagram" className="w-8 h-8" />
             </a>
           </div>
           <address className="not-italic leading-relaxed">
@@ -110,7 +113,7 @@ export default function BotonMenu() {
       aria-label="Abrir menú"
     >
       <img
-        src="/icons/bme.png"
+        src={iconMenu}
         alt="Icono de menú"
         width={38}
         height={38}

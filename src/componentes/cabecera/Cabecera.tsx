@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react'
 import BotonMenu from '../boton-menu/BotonMenu'
+import victonueva from '../../assets/victonueva.png'
+
+// ruta correcta para GitHub Pages y dev
+const instagramIcon = `${import.meta.env.BASE_URL}icons/insbla.png`
 
 export default function Cabecera() {
   const [esSticky, setEsSticky] = useState(false)
@@ -24,7 +28,7 @@ export default function Cabecera() {
         {/* Izquierda: logo + menú */}
         <div className="flex items-center gap-2 sm:gap-4">
           <img
-            src="/images/victonueva.png"
+            src={victonueva}
             alt="Logo del restaurante Victoria"
             className="object-contain w-28 sm:w-36 md:w-44 transition-all"
           />
@@ -39,7 +43,7 @@ export default function Cabecera() {
           aria-label="Instagram"
         >
           <img
-            src="/icons/insta.png"
+            src={instagramIcon}
             alt="Instagram"
             className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
           />

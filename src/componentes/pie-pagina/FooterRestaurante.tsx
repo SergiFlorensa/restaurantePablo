@@ -1,5 +1,8 @@
 // FooterRestaurante.tsx
 import { MapPin, Phone } from 'lucide-react'
+import victonueva from '../../assets/victonueva.png';
+import goldInsta from '/icons/goldinsta.png'
+
 
 export default function FooterRestaurante() {
   return (
@@ -9,14 +12,14 @@ export default function FooterRestaurante() {
         <div className="flex-1 flex flex-col gap-6">
           {/* Logo grande dorado */}
           <img
-            src="/images/victonueva.png"
+            src={victonueva}
             alt="Logo Restaurante Victoria"
             className="w-40 mb-2"
             style={{ filter: 'brightness(0) saturate(100%) invert(66%) sepia(52%) saturate(614%) hue-rotate(6deg) brightness(92%) contrast(88%)' }} // simula logo dorado si el logo original es oscuro
           />
           <div className="flex flex-col gap-2 mt-4">
             <a href="https://www.instagram.com/tu-restaurante" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-              <img src="/icons/goldinsta.png" alt="Instagram" className="w-5 h-5" />
+<img src={goldInsta} alt="Instagram" className="w-5 h-5" />
               Instagram
             </a>
             <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">

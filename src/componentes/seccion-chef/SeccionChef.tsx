@@ -1,5 +1,6 @@
 import chefImg from '/images/cocinerooo.png'
 
+
 export default function SeccionChef() {
   return (
     <section className="bg-[#265b4d] py-20 px-4 text-white">
