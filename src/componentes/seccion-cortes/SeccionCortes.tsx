@@ -22,7 +22,7 @@ const productos = [
     descripcion:
       'Parte abdominal del animal, jugosa y con textura única. Muy valorada en parrillas argentinas.',
     descripcionExtra: '',
-    imagen: '/images/vacio.jpg',
+    imagen: '/images/entraña.jpg',
   },
   {
     nombre: 'Matambre',
@@ -47,70 +47,86 @@ export default function SeccionCortes() {
   };
 
   return (
-    <section className="relative py-20 px-4 bg-transparent overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Título */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#265b4d]">
-          Productos de calidad
-        </h2>
+    <section className="w-full bg-transparent py-20 overflow-hidden">
+  <div className="max-w-7xl mx-auto">
+    {/* Título */}
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#265b4d]">
+      Productos de calidad
+    </h2>
 
-        {/* Frase rompedora */}
-        <p
-          className="text-center mb-12 text-[#265b4d]"
-          style={{
-            fontFamily: 'RockSalt',
-            fontSize: 'clamp(1.25rem, 10vw, 2.5rem)',
-            lineHeight: '1.5',
-          }}
-        >
-          Carne seleccionada, sabor inigualable
+    {/* Frase rompedora */}
+    <p
+      className="text-center mb-12 text-[#265b4d]"
+      style={{
+        fontFamily: 'RockSalt',
+        fontSize: 'clamp(1.25rem, 10vw, 2.5rem)',
+        lineHeight: '1.5',
+      }}
+    >
+      Carne seleccionada, sabor inigualable
+    </p>
+
+    {/* Contenedor con scroll y flechas */}
+    <div className="relative">
+      {/* Flecha izquierda */}
+      <button
+        onClick={() => scroll('left')}
+        className="absolute z-10 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition"
+        style={{
+          top: '55%',
+          left: '0.25rem',
+          transform: 'translateY(-50%)',
+        }}
+      >
+        <ChevronLeftIcon className="h-5 w-5 text-[#265b4d]" />
+      </button>
+
+      {/* Carrusel horizontal con padding lateral para respiración */}
+    <div
+  ref={scrollRef}
+  className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-4 md:px-8"
+>
+
+
+        {productos.map((item, i) => (
+  <div
+    key={i}
+    className="min-w-[240px] md:min-w-[320px] h-[340px] md:h-[360px] flex-shrink-0 rounded-xl shadow-lg overflow-hidden transition hover:scale-[1.02] bg-transparent flex flex-col"
+  >
+    <img
+      src={item.imagen}
+      alt={item.nombre}
+      className="w-full h-[70%] object-cover"
+    />
+    <div className="flex-1 p-3 bg-transparent flex flex-col justify-start">
+      <h3 className="text-lg font-bold mb-1 text-[#265b4d]">{item.nombre}</h3>
+      <p className="text-sm text-[#265b4d] leading-snug">{item.descripcion}</p>
+      {item.descripcionExtra && (
+        <p className="text-sm text-[#265b4d] mt-1 opacity-80 leading-snug">
+          {item.descripcionExtra}
         </p>
+      )}
+    </div>
+  </div>
+))}
 
-        {/* Contenedor con flechas */}
-        <div className="relative">
-          {/* Flecha izquierda */}
-          <button
-            onClick={() => scroll('left')}
-            className="flex absolute -left-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm shadow-md p-1.5 rounded-full z-10 hover:bg-white"
-          >
-            <ChevronLeftIcon className="h-5 w-5 text-[#265b4d]" />
-          </button>
-
-          {/* Fila desplazable */}
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-2 md:px-10"
-          >
-            {productos.map((item, i) => (
-              <div
-                key={i}
-                className="min-w-[280px] md:min-w-[360px] flex-shrink-0 rounded-xl shadow-lg overflow-hidden transition hover:scale-[1.02] bg-transparent"
-              >
-                <img
-                  src={item.imagen}
-                  alt={item.nombre}
-                  className="w-full h-56 md:h-64 object-cover"
-                />
-                <div className="p-4 bg-white/80 backdrop-blur-sm rounded-b-xl">
-                  <h3 className="text-xl font-bold mb-2 text-[#265b4d]">{item.nombre}</h3>
-                  <p className="text-sm text-[#265b4d]">{item.descripcion}</p>
-                  {item.descripcionExtra && (
-                    <p className="text-sm text-[#265b4d] mt-2 opacity-80">{item.descripcionExtra}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Flecha derecha */}
-          <button
-            onClick={() => scroll('right')}
-            className="flex absolute -right-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm shadow-md p-1.5 rounded-full z-10 hover:bg-white"
-          >
-            <ChevronRightIcon className="h-5 w-5 text-[#265b4d]" />
-          </button>
-        </div>
       </div>
-    </section>
+
+      {/* Flecha derecha */}
+      <button
+        onClick={() => scroll('right')}
+        className="absolute z-10 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition"
+        style={{
+          top: '55%',
+          right: '0.25rem',
+          transform: 'translateY(-50%)',
+        }}
+      >
+        <ChevronRightIcon className="h-5 w-5 text-[#265b4d]" />
+      </button>
+    </div>
+  </div>
+</section>
+
   );
 }

@@ -44,14 +44,21 @@ export default function FooterRestaurante() {
         <div className="flex-1 flex flex-col items-center md:items-end justify-center gap-2">
           <h2 className="text-5xl font-light tracking-widest mb-2">CONTACTA</h2>
           <a href="mailto:contacto@restaurantevictoria.com" className="text-3xl md:text-4xl font-light hover:underline mb-2">
-            contacto@restaurantevictoria.com
+            victorianueva@gmail.com
           </a>
         </div>
       </div>
       {/* Línea inferior */}
-      <div className="mt-12 text-center text-xs tracking-widest text-[#C99745]/90">
-        © {new Date().getFullYear()} RESTAURANTE VICTORIA · VOLVER ARRIBA
-      </div>
+     <div className="mt-12 text-center text-xs tracking-widest text-[#C99745]/90">
+  © {new Date().getFullYear()} RESTAURANTE VICTORIA ·{' '}
+  <button
+    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    className="hover:underline"
+  >
+    VOLVER ARRIBA
+  </button>
+</div>
+
     </footer>
   )
 }

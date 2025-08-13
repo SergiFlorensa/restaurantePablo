@@ -1,4 +1,4 @@
-import chefImg from '/images/chef.jpg'
+import chefImg from '/images/cocinerooo.png'
 
 export default function SeccionChef() {
   return (
@@ -22,18 +22,20 @@ export default function SeccionChef() {
             Conoce a nuestro Chef
           </h2>
 
-          {/* Frase destacada con fuente RockSalt */}
-          <p
-            className="mb-6"
-            style={{
-              fontFamily: 'RockSalt',
-              fontSize: 'clamp(1.5rem, 10vw, 2.5rem)',
-              lineHeight: '1.5',
-              color: '#ffffff',
-            }}
-          >
-            Cada plato lleva su firma
-          </p>
+          {/* Frase destacada con icono inclinado */}
+          <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+            <p
+              style={{
+                fontFamily: 'RockSalt',
+                fontSize: 'clamp(1.5rem, 10vw, 2.5rem)',
+                lineHeight: '1.5',
+                color: '#ffffff',
+              }}
+            >
+              Cada plato lleva su firma
+            </p>
+            
+          </div>
 
           <p
             className="text-xl sm:text-2xl font-light leading-relaxed mb-6"
@@ -51,16 +53,15 @@ export default function SeccionChef() {
           </p>
 
           <a
-  href="/nosotros"
-  className="inline-block px-8 py-3 rounded-full text-sm font-semibold transition mt-6"
-  style={{
-    backgroundColor: '#b9c9b8', // fondo marrón
-    color: '#4c6768'            // texto beige
-  }}
->
-  VER DETALLES
-</a>
-
+            href="/nosotros"
+            className="inline-block px-8 py-3 rounded-full text-sm font-semibold transition mt-6"
+            style={{
+              backgroundColor: '#b9c9b8',
+              color: '#4c6768'
+            }}
+          >
+            SOBRE MÍ
+          </a>
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
 import Cabecera from './componentes/cabecera/Cabecera'
 import Bienvenida from './componentes/bienvenida/Bienvenida'
-import GaleriaReferencias from './componentes/galeria-referencias/GaleriaReferencias'
 import SeccionCarta from './componentes/seccion-carta/SeccionCarta'
 import SeccionRegalo from './componentes/seccion-concepto/SeccionConcepto'
 import SeccionArgentina from './componentes/seccion-argentina/SeccionArgentina'
