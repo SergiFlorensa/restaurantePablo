@@ -1,7 +1,7 @@
-// src/components/boton-menu/BotonMenu.tsx
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ReactDOM from 'react-dom'
+import ContactModal from '../contacto/contacto'
 
 const iconInstagram = `${import.meta.env.BASE_URL}icons/insta.png`
 const iconMenu = `${import.meta.env.BASE_URL}icons/bme.png`
@@ -10,8 +10,9 @@ export default function BotonMenu() {
   const [abierto, setAbierto] = useState(false)
   const [portalNode, setPortalNode] = useState<HTMLElement | null>(null)
   const [animarMenu, setAnimarMenu] = useState(false)
+  const [showContact, setShowContact] = useState(false)
 
-  /* Crear nodo portal */
+  /* Crear nodo portal para el menú lateral */
   useEffect(() => {
     const div = document.createElement('div')
     document.body.appendChild(div)
@@ -22,7 +23,7 @@ export default function BotonMenu() {
     }
   }, [])
 
-  /* Activar animación con retardo al abrir el menú */
+  /* Animación del menú */
   useEffect(() => {
     if (abierto) {
       const timeout = setTimeout(() => setAnimarMenu(true), 100)
@@ -64,20 +65,42 @@ export default function BotonMenu() {
         </button>
 
         <nav className="flex flex-col gap-6 text-3xl font-semibold">
-          {enlaces.map(({ to, label }, index) => (
-            <Link
-              key={to}
-              to={to}
-              onClick={() => setAbierto(false)}
-              className={`
-                transition-all duration-300 ease-out transform
-                ${animarMenu ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}
-              `}
-              style={{ transitionDelay: animarMenu ? `${index * 100}ms` : '0ms' }}
-            >
-              {label}
-            </Link>
-          ))}
+          {enlaces.map(({ to, label }, index) => {
+            if (label === 'Contacto') {
+              return (
+                <button
+                  key={label}
+                  onClick={() => {
+                    // cerrar menú y abrir modal tras animación
+                    setAbierto(false)
+                    setTimeout(() => setShowContact(true), 350)
+                  }}
+                  className={`
+                    text-left transition-all duration-300 ease-out transform
+                    ${animarMenu ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}
+                  `}
+                  style={{ transitionDelay: animarMenu ? `${index * 100}ms` : '0ms' }}
+                >
+                  {label}
+                </button>
+              )
+            }
+
+            return (
+              <Link
+                key={to}
+                to={to}
+                onClick={() => setAbierto(false)}
+                className={`
+                  transition-all duration-300 ease-out transform
+                  ${animarMenu ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}
+                `}
+                style={{ transitionDelay: animarMenu ? `${index * 100}ms` : '0ms' }}
+              >
+                {label}
+              </Link>
+            )
+          })}
         </nav>
 
         <div className="flex flex-col gap-6 mt-10 text-xl font-light">
@@ -101,7 +124,7 @@ export default function BotonMenu() {
     </aside>
   )
 
-  /* Botón hamburguesa — TAMAÑO AUMENTADO */
+  /* Botón hamburguesa */
   const BotonHamburguesa = (
     <button
       onClick={() => setAbierto(true)}
@@ -112,8 +135,7 @@ export default function BotonMenu() {
       <img
         src={iconMenu}
         alt="Icono de menú"
-        // tamaño responsivo más grande: móvil -> sm -> md
-        className="w-18 h-18 sm:w-18 sm:h-18 md:w-18 md:h-18 object-contain"
+        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
         width={64}
         height={64}
         draggable={false}
@@ -121,12 +143,21 @@ export default function BotonMenu() {
     </button>
   )
 
-  if (!portalNode) return BotonHamburguesa
+  // Si aún no tenemos portal el boton aparece normal
+  if (!portalNode)
+    return (
+      <>
+        {BotonHamburguesa}
+        {/* Si showContact se abre desde fuera también muestra modal */}
+        <ContactModal open={showContact} onClose={() => setShowContact(false)} />
+      </>
+    )
 
   return (
     <>
       {BotonHamburguesa}
       {ReactDOM.createPortal(menu, portalNode)}
+      <ContactModal open={showContact} onClose={() => setShowContact(false)} />
     </>
   )
 }

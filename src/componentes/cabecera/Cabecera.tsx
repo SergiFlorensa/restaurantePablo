@@ -1,30 +1,40 @@
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import BotonMenu from '../boton-menu/BotonMenu'
 import victonueva from '../../assets/victonueva.png'
 
-// ruta correcta para GitHub Pages y dev
 const instagramIcon = `${import.meta.env.BASE_URL}icons/insbla.png`
 
 export default function Cabecera() {
   const [esSticky, setEsSticky] = useState(false)
+  const location = useLocation()
 
-  /* Escucha el scroll una sola vez */
   useEffect(() => {
+    // Si estamos en /carta, siempre fijo beige
+    if (location.pathname === '/carta') {
+      setEsSticky(true)
+      return
+    }
+
+    // Si no, se comporta como antes (cambia con el scroll)
     const onScroll = () => setEsSticky(window.scrollY > 90)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [location.pathname])
 
-  /* Clases dinámicas */
   const fondo = esSticky
     ? 'bg-[#d8c5ad]/95 shadow-md backdrop-blur-sm'
     : 'bg-transparent'
 
-  const alto = 'h-16 sm:h-20 md:h-24' // alto coherente en todos los tamaños
+  const alto = 'h-16 sm:h-20 md:h-24'
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${fondo}`}>
-      <div className={`flex items-center justify-between ${alto} px-4 sm:px-6 md:px-8`}>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${fondo}`}
+    >
+      <div
+        className={`flex items-center justify-between ${alto} px-4 sm:px-6 md:px-8`}
+      >
         {/* Izquierda: logo + menú */}
         <div className="flex items-center">
           <img
@@ -45,7 +55,7 @@ export default function Cabecera() {
           <img
             src={instagramIcon}
             alt="Instagram"
-            className="w-8 h-8 sm:w-7 sm:h-9 md:w-9 md:h-9"
+            className="w-7 h-7 sm:w-7 sm:h-9 md:w-7 md:h-7"
           />
         </a>
       </div>
