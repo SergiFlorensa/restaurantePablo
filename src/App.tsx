@@ -8,7 +8,7 @@ import SeccionChef from './componentes/seccion-chef/SeccionChef'
 import SeccionProductosArgentinos from './componentes/seccion-productos-argentinos/SeccionProductosArgentinos'
 import SeccionCortes from './componentes/seccion-cortes/SeccionCortes'
 import NuestraCocina from './componentes/nuestra-cocina/NuestraCocina'
-import Carta from './paginas/carta/carta' // <- respeta mayúscula
+import Carta from './paginas/carta/Carta-temp' // <- respeta mayúscula
 
 function PaginaInicio() {
   return (

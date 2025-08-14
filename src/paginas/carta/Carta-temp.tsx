@@ -1,5 +1,4 @@
 // src/paginas/carta/Carta.tsx
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 type Item = { nombre: string; precio: string }
