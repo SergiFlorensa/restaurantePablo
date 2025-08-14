@@ -1,80 +1,105 @@
+// src/componentes/seccion-carta/SeccionCarta.tsx
 import { Link } from 'react-router-dom'
 
-const base = import.meta.env.BASE_URL // '' en dev  |  '/restaurantePablo/' en producción
+type Categoria = {
+  id: string
+  title: string
+  subtitle?: string
+  image: string
+}
 
-const imagenes = [
-  {
-    imagen: `${base}images/nachos.jpg`,
-    alt: 'Plato con carnes argentinas',
-  },
-  {
-    imagen: `${base}images/milanesa.jpg`,
-    alt: 'Carne a la brasa con guarnición',
-  },
-  {
-    imagen: `${base}images/burrata.png`,
-    alt: 'Postre gourmet del restaurante',
-  },
-  {
-    imagen: `${base}images/menu.png`,
-    alt: 'Ver menú del restaurante',
-  },
+const base = import.meta.env.BASE_URL // '' en dev  | '/restaurantePablo/' en Pages
+
+const categorias: Categoria[] = [
+  { id: 'entrantes', title: 'Entrantes', subtitle: 'Para compartir y empezar', image: `${base}images/nachos.jpg` },
+  { id: 'principales', title: 'Plato principal', subtitle: 'Carnes y clásicos', image: `${base}images/milanesa.jpg` },
+  { id: 'postres', title: 'Postres', subtitle: 'Dulces tradicionales', image: `${base}images/burrata.png` },
 ]
 
 export default function SeccionCarta() {
   return (
-    <section className="bg-transparent px-4 text-center mt-8">
-      {/* Encabezado */}
-      <div className="mb-8">
-        <h3 className="text-3xl sm:text-3xl font-semibold" style={{ color: '#265b4d' }}>
-          La carta
-        </h3>
-        <p
-          className="text-center text-[#265b4d]"
-          style={{
-            fontFamily: 'RockSalt',
-            fontSize: 'clamp(1.25rem, 8vw, 2.5rem)',
-            lineHeight: '2.8rem',
-          }}
-        >
-          Elige tu momento favorito del sabor
-        </p>
-      </div>
-
-      {/* Móvil: solo imagen index 3 */}
-      <div className="block sm:hidden max-w-md mx-auto">
-        <div className="relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-          <img src={imagenes[3].imagen} alt={imagenes[3].alt} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <Link
-              to="/carta"
-              className="bg-white text-black px-6 py-2 text-sm font-semibold uppercase tracking-wider hover:bg-gray-100 transition"
-            >
-              Ver
-            </Link>
-          </div>
+    <section className="py-16 px-4 bg-[#d8c5ad]">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-8">
+          <h3 className="text-4xl tracking-widest text-[#265b4d]">La carta</h3>
+          <h2
+            className="text-3xl md:text-4xl font-bold text-[#265b4d] mt-2"
+            style={{ fontFamily: 'RockSalt' }}
+          >
+            Sabores que te llevan de viaje
+          </h2>
         </div>
-      </div>
 
-      {/* Tablet / escritorio: imágenes 0-1-2 */}
-      <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {imagenes.slice(0, 3).map((item, i) => (
-          <div key={i} className="relative group overflow-hidden rounded-lg shadow-lg aspect-[4/5]">
-            <img
-              src={item.imagen}
-              alt={item.alt}
-              className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-              <Link
-                to="/carta"
-                className="bg-white text-black px-6 py-2 text-sm font-semibold uppercase tracking-wider hover:bg-gray-100 transition"
-              >
-                Ver menú
-              </Link>
-            </div>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categorias.map((c) => (
+            <article
+              key={c.id}
+              className="relative group rounded-2xl overflow-hidden shadow-lg"
+              role="button"
+              tabIndex={0}
+              aria-label={`Ir a ${c.title}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  const link = document.getElementById(`link-${c.id}`) as HTMLAnchorElement | null
+                  link?.click()
+                }
+              }}
+            >
+              {/* ratio fijo para consistencia visual */}
+              <div className="aspect-[4/5] w-full overflow-hidden bg-gray-100">
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  draggable={false}
+                />
+              </div>
+
+              {/* overlay con CTA */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/45 to-transparent">
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-white">{c.title}</h4>
+                  {c.subtitle && <p className="text-sm text-white/90">{c.subtitle}</p>}
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-white/80">Ver sección</span>
+
+                  <Link
+                    id={`link-${c.id}`}
+                    to={`/carta#${c.id}`}
+                    onKeyDown={(_e) => {
+  if (_e.key === 'Enter' || _e.key === ' ') {
+    const link = document.getElementById(`link-${c.id}`) as HTMLAnchorElement | null
+    link?.click()
+  }
+}}
+
+                    className="inline-flex items-center gap-2 rounded-full bg-white/90 text-[#265b4d] px-3 py-1 text-sm font-medium shadow-sm hover:scale-105 transition-transform"
+                    aria-label={`Ver sección ${c.title}`}
+                  >
+                    Ver
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link
+            to="/carta"
+            className="inline-block px-6 py-3 rounded-full bg-[#265b4d] text-white font-semibold shadow hover:brightness-105 transition"
+            aria-label="Ver carta completa"
+          >
+            Ver carta completa
+          </Link>
+        </div>
       </div>
     </section>
   )
