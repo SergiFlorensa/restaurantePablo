@@ -93,17 +93,29 @@ export default function SeccionCortes() {
                     draggable={false}
                   />
                 </div>
+{/* Texto (fondo transparente) — tamaño optimizado para móviles grandes (iPhone 13 Pro Max) */}
+<div className="p-3 md:p-4 flex flex-col gap-2">
+  <h3 className="text-lg md:text-xl font-bold mb-1 text-[#265b4d]">
+    {nombre}
+  </h3>
 
-                {/* Texto (fondo transparente) */}
-                <div className="p-3 md:p-4 flex flex-col gap-1">
-                  <h3 className="text-lg font-bold mb-1 text-[#265b4d]">{nombre}</h3>
-                  <p className="text-sm text-[#265b4d] leading-snug line-clamp-3">{descripcion}</p>
-                  {descripcionExtra && (
-                    <p className="text-sm text-[#265b4d] mt-1 opacity-80 leading-snug line-clamp-2">
-                      {descripcionExtra}
-                    </p>
-                  )}
-                </div>
+  <p
+    className="text-[18px] md:text-[20px] text-[#265b4d] leading-[26px] md:leading-[28px] line-clamp-3 break-words"
+    style={{ WebkitFontSmoothing: 'antialiased' }}
+  >
+    {descripcion}
+  </p>
+
+  {descripcionExtra && (
+    <p
+      className="text-[18px] md:text-[20px] text-[#265b4d] mt-1 opacity-80 leading-[26px] md:leading-[28px] line-clamp-2 break-words"
+      style={{ WebkitFontSmoothing: 'antialiased' }}
+    >
+      {descripcionExtra}
+    </p>
+  )}
+</div>
+
               </article>
             ))}
           </div>

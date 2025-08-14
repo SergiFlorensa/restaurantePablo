@@ -26,11 +26,11 @@ export default function Cabecera() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${fondo}`}>
       <div className={`flex items-center justify-between ${alto} px-4 sm:px-6 md:px-8`}>
         {/* Izquierda: logo + menú */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center">
           <img
             src={victonueva}
             alt="Logo del restaurante Victoria"
-            className="object-contain w-28 sm:w-36 md:w-44 transition-all"
+            className="object-contain w-36 sm:w-36 md:w-44 transition-all"
           />
           <BotonMenu />
         </div>
@@ -45,7 +45,7 @@ export default function Cabecera() {
           <img
             src={instagramIcon}
             alt="Instagram"
-            className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+            className="w-8 h-8 sm:w-7 sm:h-9 md:w-9 md:h-9"
           />
         </a>
       </div>

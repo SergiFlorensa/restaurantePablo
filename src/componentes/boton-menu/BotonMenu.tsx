@@ -1,3 +1,4 @@
+// src/components/boton-menu/BotonMenu.tsx
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ReactDOM from 'react-dom'
@@ -17,9 +18,7 @@ export default function BotonMenu() {
     setPortalNode(div)
 
     return () => {
-      if (div.parentNode) {
-        div.parentNode.removeChild(div)
-      }
+      if (div.parentNode) div.parentNode.removeChild(div)
     }
   }, [])
 
@@ -33,7 +32,6 @@ export default function BotonMenu() {
     }
   }, [abierto])
 
-  /* Submenús con animación en cascada */
   const enlaces = [
     { to: '/carta', label: 'Carta' },
     { to: '/nuestro-concepto', label: 'Nuestro concepto' },
@@ -41,7 +39,7 @@ export default function BotonMenu() {
     { to: '/contacto', label: 'Contacto' },
   ]
 
-  /* Menú lateral */
+  /* Menú lateral (portal) */
   const menu = (
     <aside
       className={`
@@ -52,19 +50,20 @@ export default function BotonMenu() {
         transform transition-transform duration-300 ease-in-out
         ${abierto ? 'translate-x-0' : '-translate-x-full'}
       `}
+      role="dialog"
+      aria-modal="true"
     >
       <div className="relative min-h-full flex flex-col px-6 pt-20 pb-6 overflow-y-auto">
-        {/* Botón cerrar */}
         <button
           onClick={() => setAbierto(false)}
           className="absolute top-5 right-5 text-3xl"
           aria-label="Cerrar menú"
+          type="button"
         >
           ✕
         </button>
 
-        {/* Navegación animada */}
-        <nav className="flex flex-col gap-6 text-xl font-semibold">
+        <nav className="flex flex-col gap-6 text-3xl font-semibold">
           {enlaces.map(({ to, label }, index) => (
             <Link
               key={to}
@@ -74,17 +73,14 @@ export default function BotonMenu() {
                 transition-all duration-300 ease-out transform
                 ${animarMenu ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}
               `}
-              style={{
-                transitionDelay: animarMenu ? `${index * 100}ms` : '0ms',
-              }}
+              style={{ transitionDelay: animarMenu ? `${index * 100}ms` : '0ms' }}
             >
               {label}
             </Link>
           ))}
         </nav>
 
-        {/* RRSS y dirección */}
-        <div className="flex flex-col gap-6 mt-10 text-sm font-light">
+        <div className="flex flex-col gap-6 mt-10 text-xl font-light">
           <div className="flex gap-6">
             <a
               href="https://www.instagram.com/tu-restaurante"
@@ -105,19 +101,22 @@ export default function BotonMenu() {
     </aside>
   )
 
-  /* Botón hamburguesa */
+  /* Botón hamburguesa — TAMAÑO AUMENTADO */
   const BotonHamburguesa = (
     <button
       onClick={() => setAbierto(true)}
       className="flex items-center gap-2"
       aria-label="Abrir menú"
+      type="button"
     >
       <img
         src={iconMenu}
         alt="Icono de menú"
-        width={38}
-        height={38}
-        className="sm:w-10 sm:h-10"
+        // tamaño responsivo más grande: móvil -> sm -> md
+        className="w-18 h-18 sm:w-18 sm:h-18 md:w-18 md:h-18 object-contain"
+        width={64}
+        height={64}
+        draggable={false}
       />
     </button>
   )

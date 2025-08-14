@@ -17,7 +17,7 @@ export default function FooterRestaurante() {
             className="w-40 mb-2"
             style={{ filter: 'brightness(0) saturate(100%) invert(66%) sepia(52%) saturate(614%) hue-rotate(6deg) brightness(92%) contrast(88%)' }} // simula logo dorado si el logo original es oscuro
           />
-          <div className="flex flex-col gap-2 mt-4">
+          <div className="flex flex-col gap-2 mt-0">
             <a href="https://www.instagram.com/tu-restaurante" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
 <img src={goldInsta} alt="Instagram" className="w-5 h-5" />
               Instagram
@@ -36,11 +36,11 @@ export default function FooterRestaurante() {
             </div>
           </div>
           {/* Legal */}
-          <div className="mt-6 flex flex-wrap gap-4 text-xs text-[#C99745]/90">
+          <div className="mt-6 flex flex-wrap gap-4 text-md text-[#C99745]/90">
             <a href="#" className="hover:underline">Aviso legal</a>
             <a href="#" className="hover:underline">Política de Privacidad</a>
-            <a href="#" className="hover:underline">Condiciones de Reserva</a>
-            <a href="#" className="hover:underline">Política de Cancelación</a>
+            {/*<a href="#" className="hover:underline">Condiciones de Reserva</a>
+            <a href="#" className="hover:underline">Política de Cancelación</a>*/}
           </div>
         </div>
         {/* Columna derecha: Contacto */}

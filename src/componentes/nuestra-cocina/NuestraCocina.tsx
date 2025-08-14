@@ -1,10 +1,8 @@
-
 import { motion } from 'framer-motion';
 import cocina from '../../assets/cocina.jpg';
 import burrata from '../../assets/burrata.png';
 import milanesa from '../../assets/milanesa.jpg';
 import carne from '../../assets/carne.jpg';
-
 
 export default function NuestraCocina() {
   return (
@@ -20,38 +18,40 @@ export default function NuestraCocina() {
         >
           Nuestra Cocina
         </motion.h2>
+
         {/* Frase decorativa previa al texto principal */}
         <motion.p
-          
           className="text-xl md:text-2xl text-[#265b4d] text-center font-frase-rompedora mb-10"
-         style={{
+          style={{
             fontFamily: 'RockSalt',
-            fontSize: '3.2rem', // Aquí puedes cambiar el tamaño fácilmente
-            lineHeight: '2.9rem', // Altura de línea opcional para legibilidad
+            fontSize: '3.2rem', // tamaño destacado
+            lineHeight: '2.9rem',
           }}
         >
           Donde cada bocado cuenta una historia
         </motion.p>
 
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
-          {/* Texto explicativo */}
+          {/* Texto explicativo - párrafos con tamaño aumentado */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-className="md:w-1/2 text-[#265b4d] font-light space-y-6 text-base md:text-lg lg:text-xl xl:text-2xl"
+            className="md:w-1/2 text-[#265b4d] font-light space-y-6"
           >
-            <p>
+            <p className="text-xl sm:text-2xl leading-relaxed">
               En cada plato encontrarás un pedacito de nuestra tierra argentina. Desde
               las tradicionales empanadas hasta nuestras carnes cuidadosamente
               seleccionadas y asadas lentamente al estilo auténtico.
             </p>
-            <p>
+
+            <p className="text-xl sm:text-2xl leading-relaxed">
               Nos esforzamos por mantener viva nuestra tradición culinaria con humildad,
               pasión y un profundo respeto por los sabores originales.
             </p>
-            <p>
+
+            <p className="text-xl sm:text-2xl leading-relaxed">
               Te invitamos a saborear la historia y tradición en cada bocado,
               en un ambiente cálido donde el protagonista siempre es el sabor auténtico.
             </p>

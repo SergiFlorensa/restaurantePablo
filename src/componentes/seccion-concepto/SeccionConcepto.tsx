@@ -27,7 +27,7 @@ export default function SeccionConcepto() {
 
         <Link
           to="/nuestro-concepto"
-          className="inline-block mt-6 px-8 py-3 rounded-full text-sm font-semibold transition"
+          className="inline-block mt-6 px-8 py-3 rounded-full text-md font-semibold transition"
           style={{
             backgroundColor: '#265b4d',
             color: '#f4f7f6',

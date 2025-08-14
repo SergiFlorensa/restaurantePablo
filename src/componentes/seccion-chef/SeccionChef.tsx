@@ -55,7 +55,7 @@ export default function SeccionChef() {
 
           <a
             href="/nosotros"
-            className="inline-block px-8 py-3 rounded-full text-sm font-semibold transition mt-6"
+            className="inline-block px-8 py-3 rounded-full text-md font-semibold transition mt-6"
             style={{
               backgroundColor: '#b9c9b8',
               color: '#4c6768'

@@ -54,32 +54,35 @@ export default function SeccionArgentina() {
           </div>
         </div>
 
-        {/* 📱 Móvil: burbuja redonda centrada */}
 {/* 📱 Móvil: burbuja redonda centrada encima de la imagen */}
 <div
-  className="lg:hidden absolute left-72 top-60 z-30 -translate-x-1/2 -translate-y-1/2 w-44 h-44 sm:w-52 sm:h-52 p-4 rounded-full flex flex-col items-center justify-center text-center shadow-lg"
+  className="lg:hidden absolute left-64 top-52 z-30 -translate-x-1/2 -translate-y-1/2 
+             w-64 h-64 sm:w-72 sm:h-72 p-6 
+             rounded-full flex flex-col items-center justify-center text-center shadow-lg"
   style={{
     backgroundColor: 'rgba(201, 151, 69, 0.95)',
     color: '#fff',
-    backdropFilter: 'blur(4px)', // alternativa a backdrop-blur para compatibilidad
+    backdropFilter: 'blur(4px)',
     WebkitBackdropFilter: 'blur(4px)',
   }}
 >
   <h2
-    className="mb-1"
+    className="mb-3"
     style={{
       fontFamily: 'RockSalt',
-      fontSize: 'clamp(0.95rem, 3.2vw, 1.2rem)',
-      lineHeight: '1.1',
+      fontSize: 'clamp(1.25rem, 3.8vw, 1.5rem)',
+      lineHeight: '1.2',
       fontWeight: 'normal',
     }}
   >
     Sabores con<br />historia
   </h2>
-  <p className="text-[11px] leading-tight px-1 font-light">
-    Cada plato reúne tradición y producto. Ven a probar recetas hechas con respeto por el fuego y por el ingrediente.
+  <p className="text-[18px] sm:text-[20px] leading-[26px] px-2 font-light">
+    Cada plato reúne tradición y producto. Ven a probar recetas hechas con respeto
+    por el fuego y por el ingrediente.
   </p>
 </div>
+
 
 
       </div>
