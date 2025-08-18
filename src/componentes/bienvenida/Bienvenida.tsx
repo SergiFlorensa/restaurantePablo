@@ -73,7 +73,7 @@ export default function Bienvenida() {
 
           {/* Columna derecha */}
           <div
-            className="rounded-xl border backdrop-blur-sm p-6 sm:p-8 text-center lg:text-left"
+            className="rounded-xl border backdrop-blur-none p-6 sm:p-8 text-center lg:text-left"
             style={{
               backgroundColor: 'rgba(245, 245, 220, 0.55)',
               borderColor: 'rgba(201, 151, 69, 0.45)',

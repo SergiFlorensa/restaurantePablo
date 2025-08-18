@@ -50,7 +50,7 @@ export default function SeccionChef() {
             className="text-xl sm:text-2xl font-light leading-relaxed mb-6"
             style={{ color: '#ffffff' }}
           >
-            Su recorrido multicultural se refleja en cada receta, cada sabor y cada detalle del menú.
+            “Mi meta es sencilla: que te sientas cómodo, que disfrutes, y que quieras volver.”
           </p>
 
           <a

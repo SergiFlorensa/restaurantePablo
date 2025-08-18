@@ -47,9 +47,7 @@ export default function SeccionArgentina() {
               Sabores con historia
             </h2>
             <p className="text-lg leading-relaxed font-light">
-              Desde el corazón de Buenos Aires hasta los rincones de la Patagonia,
-              cada plato reúne tradición y producto. Ven a probar recetas hechas con
-              respeto por el fuego y por el ingrediente.
+             “Un viaje por Argentina servido a fuego lento, corte a corte, bocado a bocado.”
             </p>
           </div>
         </div>
