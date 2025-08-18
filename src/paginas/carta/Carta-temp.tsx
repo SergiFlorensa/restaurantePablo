@@ -34,7 +34,7 @@ const postres: Item[] = [
 
 export default function Carta() {
   const navigate = useNavigate()
-  const bg = `${import.meta.env.BASE_URL}images/fotocart.jpg`
+  const bg = `${import.meta.env.BASE_URL}images/fireee.jpg`
 
   return (
     <main
@@ -47,12 +47,12 @@ export default function Carta() {
       }}
     >
       {/* Velo para contraste */}
-      <div className="absolute inset-0 bg-black/30 z-0" />
+      <div className="absolute inset-0 bg-black/60 z-0" />
 
       {/* Botón volver atrás */}
       <button
         onClick={() => navigate('/')}
-        className="absolute top-5 left-5 z-20 flex items-center gap-2 text-white hover:text-yellow-300 transition-colors"
+        className="absolute top-5 left-5 z-20 flex items-center gap-2 text-white hover:text-orange-300 transition-colors"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -62,7 +62,7 @@ export default function Carta() {
 
       {/* Contenedor principal ensanchado con panel translúcido */}
       <section className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-28 pb-24 text-white">
-        <div className="rounded-3xl bg-white/10 backdrop-blur-sm ring-1 ring-white/15 shadow-2xl px-6 sm:px-10 md:px-12 py-10 md:py-12">
+        <div className="rounded-3xl bg-black/55 backdrop-blur-none ring-1 ring-black/15 shadow-2xl px-6 sm:px-10 md:px-12 py-10 md:py-12">
           {/* Título */}
           <header className="text-center md:text-left mb-10">
             <h1
@@ -118,7 +118,7 @@ function Fila({ nombre, precio }: Item) {
       {/* Nombre + puntos de guía */}
       <div className="flex-1 pr-3">
         <div className="flex items-baseline">
-          <span className="text-lg md:text-xl xl:text-[22px] leading-tight">{nombre}</span>
+          <span className="text-xl md:text-xl xl:text-[22px] leading-tight">{nombre}</span>
           <span className="mx-3 flex-1 border-b border-dotted border-white/35 translate-y-[8px]" />
         </div>
       </div>

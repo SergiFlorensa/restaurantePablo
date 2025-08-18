@@ -26,13 +26,6 @@ const productos = [
     descripcionExtra: '',
     imagen: `${base}images/vacio.webp`,
   },
-  {
-    nombre: 'Matambre',
-    descripcion:
-      'Corte fino y plano entre el cuero y las costillas. Delicioso a la pizza o a la parrilla.',
-    descripcionExtra: '',
-    imagen: `${base}images/matambre.jpg`,
-  },
 ]
 
 export default function SeccionCortes() {

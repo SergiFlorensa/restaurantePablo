@@ -17,19 +17,20 @@ body {
   image-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-family: "Anziano SC", serif;
-  font-feature-settings: "smcp";
+text-transform: none;
 }
 
 
 @font-face {
   font-family: "Anziano SC";
   src: url("/fonts/anziano.woff2") format("woff2"),
-       url("/fonts/anziano.woff") format("woff");
-       
+       url("/fonts/anziano.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+
+
 @font-face {
   font-family: "RockSalt";
   src: url("/fonts/rocksalt.ttf") format("truetype");
@@ -73,4 +74,10 @@ body {
   .corte-ovalado {
     clip-path: ellipse(70% 100% at 50% -55%);
   }
+  /* aplica versalitas SOLO en títulos concretos */
+.titulo-versalitas {
+  font-variant-caps: small-caps;
+  /* muy importante: no forzar uppercase con text-transform */
+  text-transform: none;
+}
 }
