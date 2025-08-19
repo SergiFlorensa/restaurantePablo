@@ -135,9 +135,9 @@ export default function BotonMenu() {
       <img
         src={iconMenu}
         alt="Icono de menú"
-        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
-        width={64}
-        height={64}
+        className="w-146 h-146 sm:w-146 sm:h-146 md:w-146 md:h-146 object-contain"
+        width={74}
+        height={74}
         draggable={false}
       />
     </button>
