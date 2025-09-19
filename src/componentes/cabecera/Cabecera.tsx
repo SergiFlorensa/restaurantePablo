@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import BotonMenu from '../boton-menu/BotonMenu'
 import victonueva from '../../assets/victonueva.png'
@@ -10,8 +10,8 @@ export default function Cabecera() {
   const location = useLocation()
 
   useEffect(() => {
-    // Si estamos en /carta, siempre fijo beige
-    if (location.pathname === '/carta') {
+    // Si estamos en /carta o /nuestro-concepto, siempre fijo beige
+    if (location.pathname === '/carta' || location.pathname === '/nuestro-concepto') {
       setEsSticky(true)
       return
     }
@@ -35,7 +35,7 @@ export default function Cabecera() {
       <div
         className={`flex items-center justify-between ${alto} px-4 sm:px-6 md:px-8`}
       >
-        {/* Izquierda: logo + menú */}
+        {/* Izquierda: logo + menÃƒÂº */}
         <div className="flex items-center">
           <img
             src={victonueva}
@@ -62,3 +62,4 @@ export default function Cabecera() {
     </header>
   )
 }
+
