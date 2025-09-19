@@ -1,35 +1,35 @@
-// src/paginas/carta/Carta.tsx
+﻿// src/paginas/carta/Carta.tsx
 import { useNavigate } from 'react-router-dom'
 
 type Item = { nombre: string; precio: string }
 
 const entrantes: Item[] = [
-  { nombre: 'Provoleta rúcula y tomate seco', precio: '12€' },
-  { nombre: 'Chorizo criollo y morcilla', precio: '11,5€' },
-  { nombre: 'Ensalada César', precio: '13€' },
-  { nombre: 'Ensalada tropical', precio: '14€' },
-  { nombre: 'Empanada criolla', precio: '3,5€' },
-  { nombre: 'Empanada jamón y queso', precio: '3,5€' },
-  { nombre: 'Burrata con romesco', precio: '12€' },
-  { nombre: 'Nachos con guacamole y chilli con carne', precio: '13€' },
-  { nombre: 'Salmorejo', precio: '9€' },
+  { nombre: 'Provoleta rúcula y tomate seco', precio: '12 €' },
+  { nombre: 'Chorizo criollo y morcilla', precio: '11,5 €' },
+  { nombre: 'Ensalada César', precio: '13 €' },
+  { nombre: 'Ensalada tropical', precio: '14 €' },
+  { nombre: 'Empanada criolla', precio: '3,5 €' },
+  { nombre: 'Empanada jamón y queso', precio: '3,5 €' },
+  { nombre: 'Burrata con romesco', precio: '12 €' },
+  { nombre: 'Nachos con guacamole y chilli con carne', precio: '13 €' },
+  { nombre: 'Salmorejo', precio: '9 €' },
 ]
 
 const principales: Item[] = [
-  { nombre: 'Asado banderita', precio: '18€' },
-  { nombre: 'Entraña a la brasa', precio: '17€' },
-  { nombre: 'Entrecot de ternera', precio: '22€' },
-  { nombre: 'Milanesa clásica', precio: '15€' },
-  { nombre: 'Milanesa a caballo (con dos huevos)', precio: '17€' },
-  { nombre: 'Milanesa napolitana', precio: '17€' },
-  { nombre: 'Milanesa peperoni', precio: '17€' },
-  { nombre: 'Milanesa a la fugazzeta', precio: '16€' },
-  { nombre: 'Milanesa a los 4 quesos', precio: '17€' },
+  { nombre: 'Asado banderita', precio: '18 €' },
+  { nombre: 'Entraña a la brasa', precio: '17 €' },
+  { nombre: 'Entrecot de ternera', precio: '22 €' },
+  { nombre: 'Milanesa clásica', precio: '15 €' },
+  { nombre: 'Milanesa a caballo (con dos huevos)', precio: '17 €' },
+  { nombre: 'Milanesa napolitana', precio: '17 €' },
+  { nombre: 'Milanesa peperoni', precio: '17 €' },
+  { nombre: 'Milanesa a la fugazzeta', precio: '16 €' },
+  { nombre: 'Milanesa a los 4 quesos', precio: '17 €' },
 ]
 
 const postres: Item[] = [
-  { nombre: 'Flan con dulce de leche', precio: '6€' },
-  { nombre: 'Panqueque', precio: '6€' },
+  { nombre: 'Flan con dulce de leche', precio: '6 €' },
+  { nombre: 'Panqueque', precio: '6 €' },
 ]
 
 export default function Carta() {
@@ -38,6 +38,7 @@ export default function Carta() {
 
   return (
     <main
+      id="top"
       className="relative min-h-screen overflow-hidden"
       style={{
         backgroundImage: `url('${bg}')`,
@@ -53,8 +54,16 @@ export default function Carta() {
       <button
         onClick={() => navigate('/')}
         className="absolute top-5 left-5 z-20 flex items-center gap-2 text-white hover:text-orange-300 transition-colors"
+        type="button"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-7 h-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
         <span className="hidden sm:inline">Volver</span>
@@ -88,7 +97,7 @@ export default function Carta() {
           </div>
 
           <p className="mt-10 text-center text-sm md:text-base opacity-80">
-            * Precios en euros. Consulta alergénicos con nuestro equipo.
+            * Precios en euros. Consulta alérgenos con nuestro equipo.
           </p>
         </div>
       </section>

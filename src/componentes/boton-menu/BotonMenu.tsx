@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import ContactModal from '../contacto/contacto'
@@ -28,9 +28,10 @@ export default function BotonMenu() {
     if (abierto) {
       const timeout = setTimeout(() => setAnimarMenu(true), 100)
       return () => clearTimeout(timeout)
-    } else {
-      setAnimarMenu(false)
     }
+
+    setAnimarMenu(false)
+    return undefined
   }, [abierto])
 
   const enlaces = [
@@ -40,7 +41,7 @@ export default function BotonMenu() {
     { to: '/contacto', label: 'Contacto' },
   ]
 
-  /* Menú lateral (portal) */
+  /* menú lateral (portal) */
   const menu = (
     <aside
       className={`
@@ -71,7 +72,7 @@ export default function BotonMenu() {
                 <button
                   key={label}
                   onClick={() => {
-                    // cerrar menú y abrir modal tras animación
+                    // Cerrar menú y abrir modal tras la animacion
                     setAbierto(false)
                     setTimeout(() => setShowContact(true), 350)
                   }}
@@ -80,6 +81,7 @@ export default function BotonMenu() {
                     ${animarMenu ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}
                   `}
                   style={{ transitionDelay: animarMenu ? `${index * 100}ms` : '0ms' }}
+                  type="button"
                 >
                   {label}
                 </button>
@@ -143,8 +145,8 @@ export default function BotonMenu() {
     </button>
   )
 
-  // Si aún no tenemos portal el boton aparece normal
-  if (!portalNode)
+  // Si aún no tenemos portal el botón aparece normal
+  if (!portalNode) {
     return (
       <>
         {BotonHamburguesa}
@@ -152,6 +154,7 @@ export default function BotonMenu() {
         <ContactModal open={showContact} onClose={() => setShowContact(false)} />
       </>
     )
+  }
 
   return (
     <>

@@ -1,8 +1,5 @@
-
-import { motion } from 'framer-motion';
-import cocina from '../../assets/cocina.jpg';
-
-
+﻿import { motion } from 'framer-motion'
+import cocina from '../../assets/cocina.jpg'
 
 export default function NuestraCocina() {
   return (
@@ -14,15 +11,14 @@ export default function NuestraCocina() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl text-[#265b4d] font-bold text-center mb-10"
+          className="text-4xl md:text-4xl text-[#265b4d] font-bold text-center mb-10"
         >
           Nuestra Cocina
         </motion.h2>
         {/* Frase decorativa previa al texto principal */}
         <motion.p
-          
           className="text-xl md:text-2xl text-[#265b4d] text-center font-frase-rompedora mb-10"
-         style={{
+          style={{
             fontFamily: 'RockSalt',
             fontSize: '3.2rem', // Aquí puedes cambiar el tamaño fácilmente
             lineHeight: '2.9rem', // Altura de línea opcional para legibilidad
@@ -38,7 +34,7 @@ export default function NuestraCocina() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-className="md:w-1/2 text-[#265b4d] font-light space-y-6 text-base md:text-lg lg:text-xl xl:text-2xl"
+            className="md:w-1/2 text-[#265b4d] font-light space-y-6 text-xl md:text-lg lg:text-xl xl:text-2xl"
           >
             <p>
               En cada plato encontrarás un pedacito de nuestra tierra argentina. Desde
@@ -56,22 +52,21 @@ className="md:w-1/2 text-[#265b4d] font-light space-y-6 text-base md:text-lg lg:
           </motion.div>
 
           {/* Imagen destacada */}
-<motion.div
-  initial={{ opacity: 0, x: 50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.8, delay: 0.4 }}
-  className="md:w-1/2"
->
-  <img
-    src={cocina} // aquí puedes cambiar a la que más encaje
-    alt="Nuestra cocina argentina"
-    className="rounded-xl shadow-lg object-cover w-full h-auto hover:scale-105 transition-transform"
-  />
-</motion.div>
-
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="md:w-1/2"
+          >
+            <img
+              src={cocina} // aquí puedes cambiar a la que más encaje
+              alt="Nuestra cocina argentina"
+              className="rounded-xl shadow-lg object-cover w-full h-auto hover:scale-105 transition-transform"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
-  );
+  )
 }

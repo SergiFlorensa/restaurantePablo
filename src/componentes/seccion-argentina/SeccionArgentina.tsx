@@ -1,5 +1,5 @@
-export default function SeccionArgentina() {
-  const bg = `${import.meta.env.BASE_URL}images/baires.jpg`;
+﻿export default function SeccionArgentina() {
+  const bg = `${import.meta.env.BASE_URL}images/baires.jpg`
 
   return (
     <section
@@ -26,7 +26,7 @@ export default function SeccionArgentina() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* 🖥️ Desktop: bloque dorado a la derecha */}
+        {/* Desktop: bloque dorado a la derecha */}
         <div className="hidden lg:flex flex-row-reverse items-center gap-10">
           <div
             className="p-10 w-full max-w-2xl text-center rounded-l-full backdrop-blur-sm"
@@ -47,43 +47,37 @@ export default function SeccionArgentina() {
               Sabores con historia
             </h2>
             <p className="text-lg leading-relaxed font-light">
-             “Un viaje por Argentina servido a fuego lento, corte a corte, bocado a bocado.”
+              "Un viaje por Argentina servido a fuego lento, corte a corte, bocado a bocado."
             </p>
           </div>
         </div>
 
-{/* 📱 Móvil: burbuja redonda centrada encima de la imagen */}
-<div
-  className="lg:hidden absolute left-64 top-52 z-30 -translate-x-1/2 -translate-y-1/2 
-             w-64 h-64 sm:w-72 sm:h-72 p-6 
-             rounded-full flex flex-col items-center justify-center text-center shadow-lg"
-  style={{
-    backgroundColor: 'rgba(201, 151, 69, 0.95)',
-    color: '#fff',
-    backdropFilter: 'blur(4px)',
-    WebkitBackdropFilter: 'blur(4px)',
-  }}
->
-  <h2
-    className="mb-3"
-    style={{
-      fontFamily: 'RockSalt',
-      fontSize: 'clamp(1.25rem, 3.8vw, 1.5rem)',
-      lineHeight: '1.2',
-      fontWeight: 'normal',
-    }}
-  >
-    Sabores con<br />historia
-  </h2>
-  <p className="text-[18px] sm:text-[20px] leading-[26px] px-2 font-light">
-    Cada plato reúne tradición y producto. Ven a probar recetas hechas con respeto
-    por el fuego y por el ingrediente.
-  </p>
-</div>
-
-
-
+        {/* Móvil: burbuja redonda centrada encima de la imagen */}
+        <div
+          className="lg:hidden absolute left-64 top-52 z-30 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-72 sm:h-72 p-6 rounded-full flex flex-col items-center justify-center text-center shadow-lg"
+          style={{
+            backgroundColor: 'rgba(201, 151, 69, 0.95)',
+            color: '#fff',
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',
+          }}
+        >
+          <h2
+            className="mb-3"
+            style={{
+              fontFamily: 'RockSalt',
+              fontSize: 'clamp(1.3rem, 3.8vw, 1.5rem)',
+              lineHeight: '1.2',
+              fontWeight: 'normal',
+            }}
+          >
+            Sabores con<br />historia
+          </h2>
+          <p className="text-xl sm:text-[20px] leading-[26px] px-2 font-light">
+            "Un viaje por Argentina servido a fuego lento, corte a corte, bocado a bocado."
+          </p>
+        </div>
       </div>
     </section>
-  );
+  )
 }

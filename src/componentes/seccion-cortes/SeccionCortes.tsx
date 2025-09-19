@@ -1,15 +1,13 @@
-import { useRef } from 'react'
+﻿import { useRef } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 
 const base = import.meta.env.BASE_URL // '' en dev | '/restaurantePablo/' en Pages
 
 const productos = [
   {
-    nombre: 'Asado Banderita',
-    descripcion:
-      'Corte jugoso de costilla superficial con capa de grasa. Perfecto para parrilla tradicional.',
-    descripcionExtra:
-      'Carne de vacuno con marmoleado medio, sal gruesa y reposo: esencia del asado argentino.',
+    nombre: 'Asado banderita',
+    descripcion: 'Corte jugoso de costilla superficial con capa de grasa.',
+    descripcionExtra: '',
     imagen: `${base}images/asabande.webp`,
   },
   {
@@ -21,8 +19,7 @@ const productos = [
   },
   {
     nombre: 'Vacío',
-    descripcion:
-      'Parte abdominal del animal, jugosa y con textura única. Muy valorada en parrillas argentinas.',
+    descripcion: 'Parte abdominal del animal, jugosa y con textura única.',
     descripcionExtra: '',
     imagen: `${base}images/vacio.webp`,
   },
@@ -34,7 +31,10 @@ export default function SeccionCortes() {
   const scroll = (dir: 'left' | 'right') => {
     if (!scrollRef.current) return
     const amount = window.innerWidth < 768 ? window.innerWidth * 0.7 : 400
-    scrollRef.current.scrollBy({ left: dir === 'left' ? -amount : amount, behavior: 'smooth' })
+    scrollRef.current.scrollBy({
+      left: dir === 'left' ? -amount : amount,
+      behavior: 'smooth',
+    })
   }
 
   return (
@@ -59,7 +59,7 @@ export default function SeccionCortes() {
 
         {/* Carrusel */}
         <div className="relative">
-          {/* Flecha izq (visible en móvil y desktop) */}
+          {/* Flecha izquierda (visible en móvil y desktop) */}
           <button
             onClick={() => scroll('left')}
             aria-label="Mover izquierda"
@@ -86,34 +86,34 @@ export default function SeccionCortes() {
                     draggable={false}
                   />
                 </div>
-{/* Texto (fondo transparente) — tamaño optimizado para móviles grandes (iPhone 13 Pro Max) */}
-<div className="p-3 md:p-4 flex flex-col gap-2">
-  <h3 className="text-lg md:text-xl font-bold mb-1 text-[#265b4d]">
-    {nombre}
-  </h3>
 
-  <p
-    className="text-[18px] md:text-[20px] text-[#265b4d] leading-[26px] md:leading-[28px] line-clamp-3 break-words"
-    style={{ WebkitFontSmoothing: 'antialiased' }}
-  >
-    {descripcion}
-  </p>
+                {/* Texto (fondo transparente) — tamaño optimizado para móviles grandes */}
+                <div className="p-3 md:p-4 flex flex-col gap-2">
+                  <h3 className="text-xl md:text-xl font-bold mb-1 text-[#265b4d]">
+                    {nombre}
+                  </h3>
 
-  {descripcionExtra && (
-    <p
-      className="text-[18px] md:text-[20px] text-[#265b4d] mt-1 opacity-80 leading-[26px] md:leading-[28px] line-clamp-2 break-words"
-      style={{ WebkitFontSmoothing: 'antialiased' }}
-    >
-      {descripcionExtra}
-    </p>
-  )}
-</div>
+                  <p
+                    className="text-[18px] md:text-[20px] text-[#265b4d] leading-[26px] md:leading-[28px] line-clamp-3 break-words"
+                    style={{ WebkitFontSmoothing: 'antialiased' }}
+                  >
+                    {descripcion}
+                  </p>
 
+                  {descripcionExtra && (
+                    <p
+                      className="text-[18px] md:text-[20px] text-[#265b4d] mt-1 opacity-80 leading-[26px] md:leading-[28px] line-clamp-2 break-words"
+                      style={{ WebkitFontSmoothing: 'antialiased' }}
+                    >
+                      {descripcionExtra}
+                    </p>
+                  )}
+                </div>
               </article>
             ))}
           </div>
 
-          {/* Flecha der */}
+          {/* Flecha derecha */}
           <button
             onClick={() => scroll('right')}
             aria-label="Mover derecha"

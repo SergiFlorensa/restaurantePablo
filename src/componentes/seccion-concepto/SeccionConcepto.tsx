@@ -1,9 +1,9 @@
-import { ReactTyped } from 'react-typed'
+﻿import { ReactTyped } from 'react-typed'
 import { Link } from 'react-router-dom'
 
 export default function SeccionConcepto() {
   return (
-    <section className="py-20 px-4 text-center bg-transparent text-black">
+    <section className="py-0 px-4 text-center bg-transparent text-black">
       <div className="max-w-3xl mx-auto">
         <h2
           className="text-3xl sm:text-4xl font-bold mb-6"

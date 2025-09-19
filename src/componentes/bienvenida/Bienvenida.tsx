@@ -1,4 +1,4 @@
-export default function Bienvenida() {
+﻿export default function Bienvenida() {
   const backgroundImage = `${import.meta.env.BASE_URL}images/patagonia.jpg`
 
   return (
@@ -48,7 +48,7 @@ export default function Bienvenida() {
             <div className="relative mb-12"></div>
 
             <h2
-              className="text-2xl tracking-widest uppercase font-semibold mb-6 text-center lg:text-left"
+              className="text-3xl tracking-widest uppercase font-semibold mb-6 text-center lg:text-left"
               style={{
                 color: '#265b4d',
                 textShadow: '0 1px 2px rgba(0,0,0,0.1)',
@@ -80,11 +80,11 @@ export default function Bienvenida() {
               color: '#265b4d',
             }}
           >
-            <p className="text-lg sm:text-xl leading-relaxed font-light mb-6">
+            <p className="text-xl sm:text-xl leading-relaxed font-light mb-6">
               Fuego, humo y tradición: trabajamos cortes elegidos para revelar texturas y
-  recuerdos. Plato a plato, contamos la historia de la parrilla argentina.
+              recuerdos. Plato a plato, contamos la historia de la parrilla argentina.
             </p>
-            <p className="text-lg sm:text-xl leading-relaxed font-light">
+            <p className="text-xl sm:text-xl leading-relaxed font-light">
               Queremos que te sientas en casa: servicio cercano, tiempos bien medidos
               y una carta que evoluciona con el mercado. Ven sin prisa; del resto
               nos ocupamos nosotros.

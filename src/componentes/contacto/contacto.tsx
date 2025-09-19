@@ -1,4 +1,4 @@
-// src/componentes/contacto/contacto.tsx
+﻿// src/componentes/contacto/contacto.tsx
 import { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
@@ -52,12 +52,13 @@ export default function Contacto({ open, onClose }: Props) {
           onClick={onClose}
           aria-label="Cerrar"
           className="absolute top-3 right-3 text-white hover:text-gray-200"
+          type="button"
         >
           ✕
         </button>
 
-        <h3 className="text-4xl font-semibold mb-2">Contacto</h3>
-        <p className="text-xl mb-4 opacity-90">
+        <h3 className="text-4xl font-black mb-2">Contacto</h3>
+        <p className="text-md mb-4 opacity-90">
           Aquí tienes la información para ponerte en contacto con nosotros.
         </p>
 
@@ -66,7 +67,7 @@ export default function Contacto({ open, onClose }: Props) {
             <div className="text-xl opacity-75">Email</div>
             <a
               href="mailto:contacto@restaurantevictoria.com"
-              className="text-lg hover:underline"
+              className="text-md hover:underline"
             >
               contacto@restaurantevictoria.com
             </a>
@@ -74,17 +75,14 @@ export default function Contacto({ open, onClose }: Props) {
 
           <div>
             <div className="text-xl opacity-75">Teléfono</div>
-            <a
-              href="tel:+34123456789"
-              className="text-lg hover:underline"
-            >
+            <a href="tel:+34123456789" className="text-md hover:underline">
               +34 123 456 789
             </a>
           </div>
 
           <div>
             <div className="text-xl opacity-75">Dirección</div>
-            <div className="text-lg">
+            <div className="text-md">
               Carrer Camí de Riudoms, 34<br />43202 Reus, Tarragona
             </div>
           </div>
@@ -106,3 +104,4 @@ export default function Contacto({ open, onClose }: Props) {
 
   return ReactDOM.createPortal(modal, modalRoot)
 }
+
