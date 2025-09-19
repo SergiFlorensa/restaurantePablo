@@ -1,5 +1,5 @@
-﻿import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import BotonMenu from '../boton-menu/BotonMenu'
 import victonueva from '../../assets/victonueva.png'
 
@@ -35,13 +35,15 @@ export default function Cabecera() {
       <div
         className={`flex items-center justify-between ${alto} px-4 sm:px-6 md:px-8`}
       >
-        {/* Izquierda: logo + menÃƒÂº */}
+        {/* Izquierda: logo + menu */}
         <div className="flex items-center">
-          <img
-            src={victonueva}
-            alt="Logo del restaurante Victoria"
-            className="object-contain w-36 sm:w-36 md:w-44 transition-all"
-          />
+          <Link to="/" aria-label="Volver al inicio" className="inline-flex">
+            <img
+              src={victonueva}
+              alt="Logo del restaurante Victoria"
+              className="object-contain w-36 sm:w-36 md:w-44 transition-all"
+            />
+          </Link>
           <BotonMenu />
         </div>
 
@@ -62,4 +64,3 @@ export default function Cabecera() {
     </header>
   )
 }
-
