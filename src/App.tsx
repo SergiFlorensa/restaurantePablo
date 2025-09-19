@@ -1,4 +1,4 @@
-// src/App.tsx
+﻿// src/App.tsx
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 
 import Cabecera from './componentes/cabecera/Cabecera'
@@ -11,7 +11,9 @@ import SeccionProductosArgentinos from './componentes/seccion-productos-argentin
 import SeccionCortes from './componentes/seccion-cortes/SeccionCortes'
 import NuestraCocina from './componentes/nuestra-cocina/NuestraCocina'
 import Footer from './componentes/pie-pagina/FooterRestaurante'
-import Carta from './paginas/carta/Carta-temp' // <- respeta mayúscula
+import Carta from './paginas/carta/Carta-temp' // <- respeta mayuscula
+import NuestroConcepto from './paginas/nuestro-concepto/NuestroConcepto'
+import ScrollToTop from './componentes/ScrollToTop'
 
 function PaginaInicio() {
   return (
@@ -30,16 +32,18 @@ function PaginaInicio() {
 
 export default function App() {
   const location = useLocation()
-  const esCarta = location.pathname === '/carta' // con basename, aquí llega limpio
+  const esCarta = location.pathname === '/carta' // con basename, aqui llega limpio
 
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       {!esCarta && <Cabecera />}
 
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<PaginaInicio />} />
           <Route path="/carta" element={<Carta />} />
+          <Route path="/nuestro-concepto" element={<NuestroConcepto />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
