@@ -1,5 +1,5 @@
 ﻿import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Flame, Mountain, Sparkles } from 'lucide-react'
 
@@ -66,12 +66,30 @@ const experiencia = [
 ] as const
 
 export default function NuestroConcepto() {
+  const navigate = useNavigate()
   const [pilarActivo, setPilarActivo] = useState(0)
   const heroBg = `${import.meta.env.BASE_URL}images/fireee.jpg`
 
   return (
     <div className="bg-[#f7f2e5] text-[#1f2727]">
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <button
+          onClick={() => navigate('/')}
+          className="absolute top-5 left-5 z-20 flex items-center gap-2 text-white hover:text-orange-300 transition-colors"
+          type="button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span className="hidden sm:inline">Volver</span>
+        </button>
         <img
           src={heroBg}
           alt="Brasas encendidas"

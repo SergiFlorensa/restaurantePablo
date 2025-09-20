@@ -32,12 +32,13 @@ function PaginaInicio() {
 
 export default function App() {
   const location = useLocation()
-  const esCarta = location.pathname === '/carta' // con basename, aqui llega limpio
+  const ocultarCabecera = location.pathname === '/carta' || location.pathname === '/nuestro-concepto'
+  const mostrarFooter = location.pathname !== '/carta'
 
   return (
     <div className="flex flex-col min-h-screen">
       <ScrollToTop />
-      {!esCarta && <Cabecera />}
+      {!ocultarCabecera && <Cabecera />}
 
       <main className="flex-grow">
         <Routes>
@@ -48,7 +49,9 @@ export default function App() {
         </Routes>
       </main>
 
-      {!esCarta && <Footer />}
+      {mostrarFooter && <Footer />}
     </div>
   )
 }
+
+
