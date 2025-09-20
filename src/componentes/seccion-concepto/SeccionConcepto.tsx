@@ -43,7 +43,7 @@ function FraseHero({ frases }: { frases: string[] }) {
   const fraseMasLarga = useMemo(() => frases.reduce((larga, actual) => (actual.length > larga.length ? actual : larga), ''), [frases])
 
   return (
-    <span className="relative inline-flex min-h-[1.6em] items-center text-[#265b4d]">
+    <span className="relative inline-flex min-h-[1.6em] max-w-full items-center overflow-hidden text-[#265b4d]">
       <AnimatePresence mode="wait">
         <motion.span
           key={frases[indice]}
@@ -51,12 +51,12 @@ function FraseHero({ frases }: { frases: string[] }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.35 }}
-          className="absolute left-0 top-0 whitespace-nowrap"
+          className="absolute inset-x-0 top-0 whitespace-nowrap text-center md:text-left"
         >
           {frases[indice]}
         </motion.span>
       </AnimatePresence>
-      <span className="invisible whitespace-nowrap">{fraseMasLarga}</span>
+      <span className="invisible block whitespace-nowrap text-center md:text-left">{fraseMasLarga}</span>
     </span>
   )
 }
@@ -82,13 +82,13 @@ export default function SeccionConcepto() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="space-y-8"
+          className="space-y-8 max-w-xl mx-auto lg:mx-0"
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-white/80 text-[#14212B] px-5 py-2 text-xs tracking-[0.32em] uppercase shadow-sm">
             Nuestro concepto
           </div>
 
-          <h2 className="text-4xl sm:text-5xl font-light text-[#14212B] leading-snug">
+          <h2 className="text-3xl sm:text-5xl font-light text-[#14212B] leading-snug">
             Una casa donde el fuego, el producto y la hospitalidad hablan por sí mismos. Aquí vivirás{' '}
             <FraseHero frases={frases} />
           </h2>
@@ -125,7 +125,7 @@ export default function SeccionConcepto() {
           </div>
         </motion.div>
 
-        <div className="grid gap-5">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
           {detalles.map((detalle, index) => (
             <motion.article
               key={detalle.titulo}
@@ -150,5 +150,6 @@ export default function SeccionConcepto() {
     </section>
   )
 }
+
 
 
