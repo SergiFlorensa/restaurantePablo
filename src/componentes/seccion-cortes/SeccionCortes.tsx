@@ -19,9 +19,9 @@ const productos = [
   },
   {
     id: 'entrana',
-    nombre: 'Entrana a la brasa',
+    nombre: 'Entraña a la brasa',
     descripcion: 'Corte del diafragma con sabor intenso y textura delicada, sellado en brasa viva.',
-    imagen: `${base}images/entrana.jpg`,
+    imagen: `${base}images/entraña.jpg`,
     badge: 'Diafragma',
     puntos: [
       'Sellado rapido para encerrar jugos, reposo controlado antes de servir.',

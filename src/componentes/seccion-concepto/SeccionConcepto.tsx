@@ -2,6 +2,14 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
+const frases = [
+  'parrilla auténtica.',
+  'cortes elegidos con cariño.',
+  'sobremesas que no miran el reloj.',
+  'un viaje sensorial por Argentina.',
+  'un servicio cercano y atento.',
+]
+
 const detalles = [
   {
     titulo: 'Fuego paciente',
@@ -51,15 +59,9 @@ export default function SeccionConcepto() {
 
           <h2 className="text-4xl sm:text-5xl font-light text-[#14212B] leading-snug">
             Una casa donde el fuego, el producto y la hospitalidad hablan por sí mismos. Aquí vivirás{' '}
-            <span className="text-[#265b4d]">
+            <span className="inline-flex min-h-[1.6em] items-center whitespace-nowrap text-[#265b4d]">
               <ReactTyped
-                strings={[
-                  'parrilla auténtica.',
-                  'cortes elegidos con cariño.',
-                  'sobremesas que no miran el reloj.',
-                  'un viaje sensorial por Argentina.',
-                  'un servicio cercano y atento.',
-                ]}
+                strings={frases}
                 typeSpeed={55}
                 backSpeed={30}
                 backDelay={2200}
