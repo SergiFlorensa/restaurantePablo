@@ -51,19 +51,19 @@ function FraseHero({ frases }: { frases: string[] }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.35 }}
-          className="absolute inset-x-0 top-0 whitespace-nowrap text-center md:text-left"
+          className="absolute inset-x-0 top-0 whitespace-normal text-center sm:whitespace-nowrap md:text-left"
         >
           {frases[indice]}
         </motion.span>
       </AnimatePresence>
-      <span className="invisible block whitespace-nowrap text-center md:text-left">{fraseMasLarga}</span>
+      <span className="invisible block whitespace-normal text-center sm:whitespace-nowrap md:text-left">{fraseMasLarga}</span>
     </span>
   )
 }
 
 export default function SeccionConcepto() {
   return (
-    <section className="group relative overflow-hidden py-24 px-4 sm:px-6">
+    <section className="group relative overflow-hidden py-16 px-4 sm:py-20 sm:px-6">
       <div
         className="absolute inset-0"
         style={{
@@ -88,7 +88,7 @@ export default function SeccionConcepto() {
             Nuestro concepto
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-light text-[#14212B] leading-snug">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light text-[#14212B] leading-snug">
             Una casa donde el fuego, el producto y la hospitalidad hablan por sí mismos. Aquí vivirás{' '}
             <FraseHero frases={frases} />
           </h2>
