@@ -1,6 +1,6 @@
-﻿import { ReactTyped } from 'react-typed'
+﻿import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const frases = [
   'parrilla auténtica.',
@@ -29,6 +29,37 @@ const detalles = [
 ]
 
 const valores = ['Parrilla argentina', 'Bodega curada', 'Empanadas a mano']
+
+function FraseHero({ frases }: { frases: string[] }) {
+  const [indice, setIndice] = useState(0)
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setIndice((actual) => (actual + 1) % frases.length)
+    }, 3200)
+    return () => window.clearInterval(id)
+  }, [frases.length])
+
+  const fraseMasLarga = useMemo(() => frases.reduce((larga, actual) => (actual.length > larga.length ? actual : larga), ''), [frases])
+
+  return (
+    <span className="relative inline-flex min-h-[1.6em] items-center text-[#265b4d]">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={frases[indice]}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.35 }}
+          className="absolute left-0 top-0 whitespace-nowrap"
+        >
+          {frases[indice]}
+        </motion.span>
+      </AnimatePresence>
+      <span className="invisible whitespace-nowrap">{fraseMasLarga}</span>
+    </span>
+  )
+}
 
 export default function SeccionConcepto() {
   return (
@@ -59,15 +90,7 @@ export default function SeccionConcepto() {
 
           <h2 className="text-4xl sm:text-5xl font-light text-[#14212B] leading-snug">
             Una casa donde el fuego, el producto y la hospitalidad hablan por sí mismos. Aquí vivirás{' '}
-            <span className="inline-flex min-h-[1.6em] items-center whitespace-nowrap text-[#265b4d]">
-              <ReactTyped
-                strings={frases}
-                typeSpeed={55}
-                backSpeed={30}
-                backDelay={2200}
-                loop
-              />
-            </span>
+            <FraseHero frases={frases} />
           </h2>
 
           <p className="max-w-xl text-lg sm:text-xl text-[#1f2727]/80 leading-relaxed">
@@ -127,4 +150,5 @@ export default function SeccionConcepto() {
     </section>
   )
 }
+
 
